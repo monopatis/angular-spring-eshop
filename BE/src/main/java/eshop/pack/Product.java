@@ -1,3 +1,5 @@
+package eshop.pack;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,7 +20,7 @@ public class Product {
     private  String description;
 
     @Column(name = "items_left")
-    private Long items_left;
+    private Long itemsLeft;
 
     public Long getId() {
         return id;
@@ -52,11 +54,11 @@ public class Product {
         this.description = description;
     }
 
-    public Long getItems_left() {
-        return items_left;
+    public Long getItemsLeft() {
+        return itemsLeft;
     }
 
-    public void setItems_left(Long items_left) {
-        this.items_left = items_left;
+    public void setItemsLeft(Long itemsLeft) {
+        this.itemsLeft = itemsLeft;
     }
 }

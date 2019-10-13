@@ -1,3 +1,5 @@
+package eshop.pack;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,9 +13,9 @@ public class NewCustomerController {
 
     @PostMapping(path="/customer/new", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Customer answer(@RequestParam("fistName") String fistName,
+    public Customer answer(@RequestParam("firstName") String firstName,
                            @RequestParam("lastName") String lastName,
                            @RequestParam("email") String email) {
-        return customerService.newCustomer(fistName, lastName, email);
+        return customerService.newCustomer(firstName, lastName, email);
     }
 }

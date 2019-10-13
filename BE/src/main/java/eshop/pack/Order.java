@@ -1,3 +1,5 @@
+package eshop.pack;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
