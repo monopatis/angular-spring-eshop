@@ -34,10 +34,14 @@ public class OrderService {
             OrderItems orderItems = new OrderItems();
             orderItems.setOrder(order);
             Optional<Product> product = productRepository.findById(productInfoList.get(i).getProductId());
-            orderItems.setProduct(product.get());
+            if (product.isPresent())
+                orderItems.setProduct(product.get());
+            else return null;
             Long quantity = productInfoList.get(i).getOrderItemQuantity();
             orderItems.setOrderItemQuantity(quantity);
-            product.get().setItemsLeft(product.get().getItemsLeft()-quantity);
+            Long itemsLeft = product.get().getItemsLeft();
+            if (itemsLeft-quantity >= 0)
+                product.get().setItemsLeft(itemsLeft-quantity);
             productRepository.save(product.get());
             orderItems = orderItemsRepository.save(orderItems);
         }
