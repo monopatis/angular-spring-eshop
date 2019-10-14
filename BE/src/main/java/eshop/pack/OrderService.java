@@ -26,6 +26,7 @@ public class OrderService {
     public Order newOrder(Long customerId, List<ProductInfo> productInfoList){
         Timestamp date_order_placed = new Timestamp(System.currentTimeMillis());
         Optional<Customer> customer = customerRepository.findById(customerId);
+        if (!customer.isPresent()) return null;
         Order order = new Order();
         order.setDate_order_placed(date_order_placed);
         order.setCustomer(customer.get());
