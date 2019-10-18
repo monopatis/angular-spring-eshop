@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-between">
+    <h4>Add new Customer</h4>
+
+    <button mat-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+</div>
+
+<div style="overflow: auto; height: 450px;">
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Customer First Name</span>
+            </div>
+            <input required minlength="2" type="text" class="form-control" name="firstName"
+                #CustomerName="ngModel" [(ngModel)]="service.formData.CustomerFirstName">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Customer Last Name</span>
+            </div>
+            <input required minlength="2" type="text" class="form-control" name="lastName"
+                #CustomerName="ngModel" [(ngModel)]="service.formData.CustomerLastName">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Email</span>
+            </div>
+            <input required minlength="2" type="text" class="form-control" name="email" #Email="ngModel"
+                [(ngModel)]="service.formData.Email">
+        </div>
+
+        <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Add
+            Customer</button>
+
+    </form>
+</div>

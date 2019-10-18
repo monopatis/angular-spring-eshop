@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from './customer.service';
-import { Customer } from './customer';
+// import { CustomerService } from './services/customer.service';
+// import { Customer } from './customer';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Eshop';
-  customer: Customer[] = [];
+  // customer: Customer[] = [];
 
-  constructor(private api: CustomerService) { }
+  // constructor(private api: CustomerService) { }
 
-  ngOnInit() {
-    this.getAllCustomers();
-  }
+  // ngOnInit() {
+  //   this.getAllCustomers();
+  // }
   // getAllCustomers() {
   //   this.api.getCustomers()
   //     .subscribe(data => {
@@ -32,11 +32,11 @@ export class AppComponent implements OnInit {
   //     });
   // }
 
-  getAllCustomers() {
-    console.log('data:');
-    this.api.getCustomers()
-      .subscribe(data => {
-        console.log(data);
-      });
-  }
+  // getAllCustomers() {
+  //   console.log('data:');
+  //   this.api.getCustomers()
+  //     .subscribe(data => {
+  //       console.log(data);
+  //     });
+  // }
 }

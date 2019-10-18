@@ -11,6 +11,7 @@ import java.util.List;
 public class NewOrderController {
     @Autowired
     private OrderService orderService;
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(path="/order/{customerId}/new", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Order answer(@PathVariable Long customerId,

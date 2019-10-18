@@ -12,7 +12,7 @@ public class CustomerService {
     @Transactional
     public Customer newCustomer(String firstName, String lastName, String email ){
         Customer customer = new Customer();
-        customer.setFistName(firstName);
+        customer.setFirstName(firstName);
         customer.setLastName(lastName);
         customer.setEmail(email);
         customer = customerRepository.save(customer);
