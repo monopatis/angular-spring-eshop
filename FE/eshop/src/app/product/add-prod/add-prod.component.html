@@ -1,1 +1,49 @@
-<p>add-prod works!</p>
+<div class="d-flex justify-content-between">
+    <h4>Add new Product</h4>
+
+    <button mat-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+</div>
+
+<div style="height: auto;">
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Product Name</span>
+            </div>
+            <input required minlength="2" type="text" class="form-control" name="name" #Name="ngModel"
+                [(ngModel)]="service.formData.ProductName">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Price</span>
+            </div>
+            <input required type="number" min="0" class="form-control" name="price" #Price="ngModel"
+                [(ngModel)]="service.formData.Price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Description</span>
+            </div>
+            <input type="text" class="form-control" name="description" #Description="ngModel"
+                [(ngModel)]="service.formData.Description">
+        </div>
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">ItemsLeft</span>
+            </div>
+            <input required type="number" min="0" class="form-control" name="itemsLeft" #ItemsLeft="ngModel"
+                [(ngModel)]="service.formData.ItemsLeft">
+        </div>
+
+        <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Add
+            Product</button>
+
+    </form>
+</div>
