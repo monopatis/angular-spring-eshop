@@ -35,6 +35,7 @@ import { AddOrdComponent } from './order/add-ord/add-ord.component';
 import {CustomerService} from './services/customer.service';
 import {ProductService} from './services/product.service';
 import {OrderService} from './services/order.service';
+import { ShorOrdItemsComponent } from './order/shor-ord-items/shor-ord-items.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {OrderService} from './services/order.service';
     AddProdComponent,
     ShowOrdComponent,
     EditOrdComponent,
-    AddOrdComponent
+    AddOrdComponent,
+    ShorOrdItemsComponent
     ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ import {OrderService} from './services/order.service';
     EditProdComponent,
     AddProdComponent,
     EditOrdComponent,
-    AddOrdComponent
+    AddOrdComponent,
+    ShorOrdItemsComponent
   ]
 })
 export class AppModule { }

@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-between">
+    <h4>Order Detail</h4>
+
+    <button mat-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+</div>
+<div style="overflow:auto;">
+    <div class="mat-elevation-z8">
+
+        <mat-table [dataSource]="listData" matSort>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns:displayedColumns;"></mat-row>
+
+            <ng-container matColumnDef="OrderItemsID">
+                <mat-header-cell *matHeaderCellDef>Order Items ID</mat-header-cell>
+                <mat-header-cell *matCellDef="let element">{{element.id}}</mat-header-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="OrderID">
+                <mat-header-cell *matHeaderCellDef>Order ID</mat-header-cell>
+                <mat-header-cell *matCellDef="let element">{{element.order.id}}</mat-header-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="ProductID">
+                <mat-header-cell *matHeaderCellDef>ProductID</mat-header-cell>
+                <mat-header-cell *matCellDef="let element">{{element.product.id}}</mat-header-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="ProductName">
+                <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
+                <mat-header-cell *matCellDef="let element">{{element.product.name}}</mat-header-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="ProductPrice">
+                <mat-header-cell *matHeaderCellDef>Product Price</mat-header-cell>
+                <mat-header-cell *matCellDef="let element">{{element.product.price}}</mat-header-cell>
+            </ng-container>
+
+        </mat-table>
+    </div>
+</div>

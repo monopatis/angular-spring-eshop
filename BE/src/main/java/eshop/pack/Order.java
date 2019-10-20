@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 @Table(name = "orders")
 public class Order {
     @Id
-    @Column(name = "orders_id")
+    @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
