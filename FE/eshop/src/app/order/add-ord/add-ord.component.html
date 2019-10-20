@@ -1,1 +1,39 @@
-<p>add-ord works!</p>
+<div class="d-flex justify-content-between">
+    <h4>New Order</h4>
+
+    <button mat-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+    </button>
+
+</div>
+
+<div style="height: auto">
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Customer</span>
+            </div>
+            <select required class="form-control" name="customerId" #CustomerId="ngModel"
+                [(ngModel)]="service.newOrderData.customerId">
+                <option *ngFor="let cl of ListItems" [value]="cl.id">
+                    {{cl.firstName}} {{cl.lastName}} ({{cl.id}})
+                </option>
+            </select>
+        </div>
+        <div class="m-3 input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Product</span>
+            </div>
+            <select required class="form-control" name="productId" #ProductId="ngModel"
+                [(ngModel)]="service.newOrderData.productInfo.productId">
+                <option *ngFor="let pl of prodListItems" [value]="pl.id">
+                    {{pl.name}} {{pl.price}} ({{pl.itemsLeft}} left) ({{pl.id}})
+                </option>
+            </select>
+            <input required type="number" min="0" class="form-control" name="orderItemQuantity" #OrderItemQuantity="ngModel"
+                [(ngModel)]="service.newOrderData.productInfo.orderItemQuantity">
+        </div>
+        <button class="mt-4" mat-raised-button color="primary" type="submit" [disabled]="form.invalid">OK</button>
+    </form>
+</div>

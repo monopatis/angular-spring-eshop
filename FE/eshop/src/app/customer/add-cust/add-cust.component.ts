@@ -43,11 +43,6 @@ export class AddCustComponent implements OnInit {
 
     this.service.addCustomer(form.value).subscribe(res => {
       this.onClose();
-      // this.resetForm(form);
-      // this.snackBar.open(res.firstName, '', {
-      //   duration: 5000,
-      //   verticalPosition: 'top'
-      // });
     }
     )
   }

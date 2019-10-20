@@ -13,15 +13,15 @@ export class ProductService {
 
   formData: Product;
   
-  readonly APIUrl = 'http://localhost:8080/product/';
+  readonly APIUrl = 'http://localhost:8080/';
 
 
   getProdList(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.APIUrl+'all');
+    return this.http.get<Product[]>(this.APIUrl+'product/all');
   }
   
   addProduct(dep: Product){
-    return this.http.post(this.APIUrl+'new', dep)
+    return this.http.post(this.APIUrl+'product/new', dep)
   }
 
   private _listners = new Subject<any>();

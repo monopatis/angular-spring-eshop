@@ -13,15 +13,15 @@ export class CustomerService {
 
   formData: Customer;
   
-  readonly APIUrl = 'http://localhost:8080/customer/';
+  readonly APIUrl = 'http://localhost:8080/';
 
 
   getCustList(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.APIUrl+'all');
+    return this.http.get<Customer[]>(this.APIUrl+'customer/all');
   }
   
   addCustomer(dep: Customer){
-    return this.http.post(this.APIUrl+'new', dep)
+    return this.http.post(this.APIUrl+'customer/new', dep)
   }
 
   private _listners = new Subject<any>();
