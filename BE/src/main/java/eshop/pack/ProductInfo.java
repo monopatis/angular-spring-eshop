@@ -1,8 +1,8 @@
 package eshop.pack;
 
 public class ProductInfo {
-    public Long productId;
-    public Long orderItemQuantity;
+    private Long productId;
+    private Long orderItemQuantity;
 
     public Long getProductId() {
         return productId;
